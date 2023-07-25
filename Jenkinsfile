@@ -28,6 +28,19 @@ pipeline {
                 }
             }
         }
+        stage ('Run SonarQube Scanner'){
+            steps{
+                script{
+                   dir("${LOCAL_WORKSPACE}") {
+                       withSonarQubeEnv('test') 
+      {
+        bat 'mvn clean package sonar:sonar
+   	echo 'Static Analysis Completed' 
+      }
+                    } 
+                }
+            }
+        }
         stage('Publish .NET Application') {
             steps {
                 script {
