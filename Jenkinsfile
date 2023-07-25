@@ -34,9 +34,7 @@ pipeline {
                    dir("${LOCAL_WORKSPACE}") {
                        withSonarQubeEnv('test') 
                   {
-                      sh "SonarScanner.MSBuild.exe begin /k: \"Test\" /d:sonar.host.url=\"http://localhost:9000\" /d:sonar.token=\"sqp_43cc3939e74a9dc08e7c5ea55f45152570e71162\""
-                      sh "MsBuild.exe /t:Rebuild"
-                      sh "SonarScanner.MSBuild.exe end /d:sonar.token=\"sqp_43cc3939e74a9dc08e7c5ea55f45152570e71162\""
+                      sh "sonar-scanner -Dsonar.sqp_43cc3939e74a9dc08e7c5ea55f45152570e71162=Test -Dsonar.sources=${LOCAL_WORKSPACE} -Dsonar.host.url=http://localhost:9000"
                   }
                     } 
                 }
