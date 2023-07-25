@@ -34,7 +34,7 @@ pipeline {
                    dir("${LOCAL_WORKSPACE}") {
                        withSonarQubeEnv('test') 
                   {
-                      sh "sonar-scanner -Dsonar.Test=Test -Dsonar.sources=${LOCAL_WORKSPACE} -Dsonar.host.url=http://localhost:9000"
+                      sh "sonar-scanner -Dsonar.projectKey=Test -Dsonar.sources=${LOCAL_WORKSPACE} -Dsonar.host.url=http://localhost:9000"
                   }
                     } 
                 }
