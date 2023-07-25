@@ -34,8 +34,8 @@ pipeline {
                    dir("${LOCAL_WORKSPACE}") {
                        withSonarQubeEnv('test') 
       {
-        bat 'mvn clean package sonar:sonar
-   	echo 'Static Analysis Completed' 
+        sh "mvn clean package sonar:sonar"
+   	echo "Static Analysis Completed" 
       }
                     } 
                 }
