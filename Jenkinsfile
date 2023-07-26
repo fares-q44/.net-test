@@ -7,7 +7,7 @@
         LOCAL_WORKSPACE = '/Users/fares/.jenkins/workspace/build-dotnet'
         BUILD_OUTPUT_DIR = 'bin'
         PUBLISH_OUTPUT_DIR = '/Users/fares/Jenkins/2' 
-    }
+    } 
     
     stages {
         stage('Clone Repository') {
