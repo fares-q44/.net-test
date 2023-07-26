@@ -4,7 +4,7 @@
     environment {
         // Define your GitHub repository and the local workspace path
         GIT_REPO = 'https://github.com/adamajammary/simple-web-app-mvc-dotnet'
-        LOCAL_WORKSPACE = '/Users/fares/.jenkins/workspace/build-dotnet'
+        LOCAL_WORKSPACE = '/var/root/.jenkins/workspace/build-dotnet'
         BUILD_OUTPUT_DIR = 'bin'
         PUBLISH_OUTPUT_DIR = '/Users/fares/Jenkins/2' 
     } 
