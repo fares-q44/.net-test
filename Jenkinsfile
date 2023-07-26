@@ -13,7 +13,7 @@
         stage('Clone Repository') {
             steps {
                 // Clone the GitHub repository to the local workspace
-             sh 'echo $Path'
+             sh 'echo $PATH'
                 git branch: 'master', url: "${GIT_REPO}"
             }
         }
