@@ -8,7 +8,7 @@
         BUILD_OUTPUT_DIR = 'bin'
         PUBLISH_OUTPUT_DIR = '/Users/fares/Jenkins/2' 
     }
-   
+    
     stages {
         stage('Clone Repository') {
             steps {
