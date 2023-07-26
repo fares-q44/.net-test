@@ -1,6 +1,6 @@
  pipeline {
     agent any
-   
+    
     environment {
         // Define your GitHub repository and the local workspace path
         GIT_REPO = 'https://github.com/adamajammary/simple-web-app-mvc-dotnet'
