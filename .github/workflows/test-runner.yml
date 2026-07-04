@@ -1,0 +1,16 @@
+name: Test GCP Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sample:
+    runs-on: [self-hosted, gcp-demo-runner]
+    steps:
+      - name: Show environment
+        run: |
+          echo "Running on: $(hostname)"
+          whoami
+          uname -a
+          echo "GCP metadata check:"
+          curl -s -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/instance/name
