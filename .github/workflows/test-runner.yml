@@ -1,16 +1,16 @@
-name: Test GCP Runner
+name: Build and Deploy .NET App
 
 on:
   workflow_dispatch:
 
 jobs:
-  sample:
+  build-and-deploy:
     runs-on: [self-hosted, gcp-demo-runner]
     steps:
-      - name: Show environment
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build and publish application
         run: |
-          echo "Running on: $(hostname)"
-          whoami
-          uname -a
-          echo "GCP metadata check:"
-          curl -s -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/instance/name
+          chmod +x build.sh
+          ./build.sh
