@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ENV=Release
 DOTNET=net7.0
@@ -11,10 +12,10 @@ dotnet clean
 dotnet build -c ${ENV} -r ${TARGET} --no-self-contained
 dotnet publish -c ${ENV} -r ${TARGET} --no-self-contained
 
+sudo mkdir -p ${OUT}
 sudo rm -rf ${OUT}/*
 sudo cp -rf bin/${ENV}/${DOTNET}/${TARGET}/publish/* ${OUT}/
 
-sudo service apache2 restart
 sudo service simplewebappmvcdotnet restart
 
 cd ..

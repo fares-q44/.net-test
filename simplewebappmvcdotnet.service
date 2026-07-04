@@ -1,5 +1,5 @@
 [Unit]
-Description=Running ASP.NET Core on Ubuntu with Apache
+Description=Running ASP.NET Core Kestrel directly (no reverse proxy)
 
 [Service]
 WorkingDirectory=/var/www/simple-web-app-mvc-dotnet
@@ -11,6 +11,7 @@ SyslogIdentifier=simple-web-app-mvc-dotnet
 User=www-data
 Environment=ASPNETCORE_ENVIRONMENT=Production
 Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+Environment=ASPNETCORE_URLS=http://0.0.0.0:5000
 
 [Install]
 WantedBy=multi-user.target
